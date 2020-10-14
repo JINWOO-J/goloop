@@ -89,7 +89,7 @@ godeps-image:
 
 gorun-% : godeps-image
 	@ \
-	docker run -it --rm \
+	docker run -i --rm \
 	    -v $(BUILD_ROOT):$(GOLOOP_WORK_DIR) \
 	    -w $(GOLOOP_WORK_DIR) \
 	    -e "GOBUILD_TAGS=$(GOBUILD_TAGS)" \
@@ -104,7 +104,7 @@ pydeps-image:
 
 pyrun-% : pydeps-image
 	@ \
-	docker run -it --rm \
+	docker run -i --rm \
 	    -v $(BUILD_ROOT):$(GOLOOP_WORK_DIR) \
 	    -w $(GOLOOP_WORK_DIR) \
 	    -e "GL_VERSION=$(GL_VERSION)" \
@@ -127,7 +127,7 @@ javadeps-image:
 
 javarun-% : javadeps-image
 	@ \
-	docker run -it --rm \
+	docker run -i --rm \
 	    -v $(BUILD_ROOT):$(GOLOOP_WORK_DIR) \
 	    -w $(GOLOOP_WORK_DIR)/javaee \
 	    $(JAVADEPS_IMAGE) \
